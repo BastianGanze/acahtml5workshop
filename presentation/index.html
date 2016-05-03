@@ -105,12 +105,49 @@ for (var x in [1,2,3]) {
                     <section>
                         <h2>Functions</h2>
                         <pre><code class="hljs" data-trim contenteditable>
+function myFunction(thing) { return thing; }
+myFunction("foo"); // "foo"
 
+// var is function scoped not block scoped! 
+if (true) { var i = 5; }
+i; // 5
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objects 2 (Classes)</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+myObj = {
+    myString: "Hello world!",
+    myFunc: function(){
+        return this.myString;
+    }
+};
+
+// constructor function the equivalent of a class
+function TestClass() {
+    this.foo = function (a) {
+        return 2*a;
+    }    
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Useful Functions</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+// gameloop
+function fun() { console.log("foo"); }
+requestAnimationFrame(fun);
+// the browser will try to run fun 60 times a second
+
+// react to mouse or keyboard or other events
+document.addEventListener("$event$", function (evt) { 
+    console.log(evt); 
+});
+// where $event$ is: "click", etc ...
                         </code></pre>
                     </section>
 
                 </section>
-                
                 <section id="fragments">
                     <h2>Libs</h2>
                     <p><a href="">pixi.js</a> - 2D graphics rendering engine</p>
