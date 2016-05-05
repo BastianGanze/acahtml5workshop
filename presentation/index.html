@@ -11,18 +11,148 @@
             <div class="slides">
                 <section>Njeh</section>
                 <section>Slide 2</section>
+                <section>
+                    <section>
+                        <h1>JS crash course</h1>
+                    </section>
+                    <section>
+                        <h2>Numbers, ...</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+// Numbers are 64-bit double
+3; 
+1.5;
+// all usual operators 
+// + - * / % << >>
+// non Numbers
+// Infinity -Infinity NaN
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>... Strings (and Booleans) ... </h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+'Aca' + "gamics";
+// Strings can be treated as arrays
+"AcaGamics"[0]; \\ "A"
+
+// Booleans are Booleans
+// true false
+
+// null and undefined
+null; // there is no value here
+undefined; // there is no value currently set
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>... and Operators</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+// Types are converted when == or != is used!
+"5" == 5; // true
+null == undefined; // true
+
+// To check for type equality too, use === or !== !
+"5" === 5; // false
+null === undefined; // false
+// always use === or !==, it's the way == and != should work!
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Variables</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+var foo = 5; // function scoped variable
+
+bar = 10; // global variable
+
+var baz; // undefined
+
+// all usual operations
+// += *= /= %= ++ --
+                       </code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+var someArray = ["foo", 42, false];
+
+someArray[0]; // "foo"
+
+someArray.push("bar"); // ["foo, 42, false, "bar"]
+someArray.length; // 4
+                      </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objects</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+var someObj = {k1: "foo", "key 2": "bar"}; 
+// the same as "dictionaries" or "maps"
+
+someObj["key 2"]; // "bar"
+someObj.k1; // "foo"
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Control Structures</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+// all the usual
+for (var i = 0; i < 10; i++) {
+    console.log(i); // 1 .. 2 .. 3 ..
+}
+
+for (var x in [1,2,3]) {
+    console.log(x); // 1 .. 2 .. 3
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Functions</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+function myFunction(thing) { return thing; }
+myFunction("foo"); // "foo"
+
+// var is function scoped not block scoped! 
+if (true) { var i = 5; }
+i; // 5
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objects 2 (Classes)</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+myObj = {
+    myString: "Hello world!",
+    myFunc: function(){
+        return this.myString;
+    }
+};
+
+// constructor function the equivalent of a class
+function TestClass() {
+    this.foo = function (a) {
+        return 2*a;
+    }    
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Useful Functions</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+// gameloop
+function fun() { console.log("foo"); }
+requestAnimationFrame(fun);
+// the browser will try to run fun 60 times a second
+
+// react to mouse or keyboard or other events
+document.addEventListener("$event$", function (evt) { 
+    console.log(evt); 
+});
+// where $event$ is: "click", etc ...
+                        </code></pre>
+                    </section>
+
+                </section>
                 <section id="fragments">
                     <h2>Libs</h2>
                     <p><a href="">pixi.js</a> - 2D graphics rendering engine</p>
                     <p class="fragment"><a href="https://github.com/CreateJS/PreloadJS/blob/master/lib/preloadjs-0.6.2.min.js">preload.js</a></p>
                     <p class="fragment"><a href="https://github.com/CreateJS/SoundJS/blob/master/lib/soundjs-0.6.2.min.js">sound.js</a></p>
-                </section>
-                <section>
-                    <h2>js crash course</h2>
-                    <pre><code class="hljs" data-trim contenteditable>
-
-
-                    </code></pre>
                 </section>
             </div>
         </div>
