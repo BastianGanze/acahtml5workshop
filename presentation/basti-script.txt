@@ -1,0 +1,103 @@
+Hallo und herzlich willkommen zum HTML5 Gamedev workshop.
+
+Wir wollen euch heute zeigen, wie man nur mit dem Browser spiele programmieren kann.
+Keine Java-Applets, kein Flash, kein Unity-Web-Plugin.
+
+Motivation:
+Wieso sollten wir unsere Spiele im Browser umsetzen?
+
+Pro:
+-> Browser werden von jedem benutzt der das Internet bedient
+-> Plattformübergreifend (Sogar auf mobilen Geräten!)
+
+Kontra:
+-> Code lässt sich schwer vor dem User verstecken (obfuscation)
+-> Performance (Siehe ASM.js(http://asmjs.org/) und WebAssambly(https://webassembly.github.io/))
+
+Was müssen wir wissen, um loslegen zu können?
+Browser-Architektur
+HTML5
+CSS
+JavaScript
+
+Zunächst versuchen wir den Browser zu verstehen, dann machen wir einen CrashCourse in HTML, erwähnen CSS noch am Rande und beginnen
+dann mit dem Hauptthema des Abends: Javascript
+
+
+Gehen wir nun also direkt auf den Browser ein.
+Die Aufgabe des Browsers ist es, Daten aus dem Internet (oder anderen Quellen), zu holen und anzuzeigen.
+Die wichtigste Rolle spielen dabei Webseiten. Das sind in der Regel HTML-Dokumente, welche über HTTP oder HTTPS von einem Server angefragt werden.
+
+Dieses HTML Dokument ist lediglich eine Beschreibung dessen, wie die Seite strukturiert sein soll. Es liegt am Browser sie so darzustellen,
+wie sie letzten Endes aussehen soll.
+
+HTML - HyperText Markup Language (Markup Language, not Programming Language)
+Was ist das nun genau?
+
+HTML ist ein vom WC3 festgelegt Standard, der (großteils) von allen Browserherstellern beachtet wird.
+
+Der WC3 Standard ist jedoch keinesfall absolut und nicht alle Browserhersteller unterstützen alle Teile des Standards.
+Damit ihr versteht, wieso ein Browser ein Feature hat was ihr eventuell benutzen wollt, ein anderer aber nicht, muss ich kurz einen Abstecher in die Geschichte machen:
+
+Gegen 2004 wurde die Web Hypertext Application Technology Working Group (WHATWG) gegründet, aus dem Frust heraus, das die WC3 sehr sehr lange benötigt um neue Webstandards festzulegen und es kaum noch Innovation in den Vorschlägen gab. Daher hat die WHATWG die HTML5 Spezifikation geschrieben und die WC3 dann später nachgegeben und diesen Adaptiert. Die WHATWG erweitert HTML5 jedoch als "Lebenden Standard" und die Browserhersteller folgen gerne den Dokumenten der WHATWG statt der WC3, daher solltet ihr immer schauen, ob euer Feature funktioniert und besonders ob es im Standard steht. (http://caniuse.com/, https://html5test.com/)
+
+
+Hier nun also erst mal der Grundlegende Aufbau eines HTML-Dokuments:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Title of the document</title>
+	</head>
+
+	<body>
+		Content of the document......
+	</body>
+</html>
+
+
+Durch DOCTYPE html weiß der Browser das es sich jetzt um ein HTML5 Dokument handelt.
+durch html das jetzt das eigentliche dokument los geht usw.
+Im Head werden verschiedene Informationen über die Seite verstaut.
+Im Body kommt der eigentliche content, der gerendert wird.
+
+
+Aber ich will jetzt nicht zu stark auf HTML selbst eingehen, da wir das für die weiteren Schritte auch nicht unbedingt benötigen. Wenn ihr da Interesse habt, schaut euch das Tutorial auf 
+http://www.w3schools.com/html/html5_intro.asp an.
+
+Im Prinzip kann ich mir nun also eine leere Textdatei erstellen, diese auf .html umbenennen, das markdown reinpasten und die seite lokal in meinem browser ausführen.
+
+Nun wissen wir, wie wir Markdown erstellen. Wenn wir nun aber ein Spiel schreiben wollen würden, hätten wir eventuell gerne einen schwarzen Hintergrund. Dafür benötigen wir CSS, da HTML wirklich nur die Struktur des Dokuments festlegt.
+
+CSS (Caskading Stylesheets)
+Mit CSS beschreiben wir, welche Elemente wie aussehen sollen, wo sie positioniert sein sollen, welche Farbe sie haben sollen etc.
+Dafür gibt es in CSS die sogenannten "selektoren", mit denen wir ein oder mehrere Elemente auswählen können. Selektoren werden gefolgt von einem Deklarationsblock, in dem wir alle Eigenschaften festlegen, die auf alle Elemente angewendet werden, welche mit deisem Selektor ausgewählt werden.
+
+body{
+	background-color: #000000;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0);
+	background-color: black;
+}
+
+
+Da wir später in Javascript mit den Elementen des HTML-Dokuments arbeiten, müssen wir noch einen kleinen Abstecher nehmen um zu verstehen, was der Browser genau mit unserem Markdown macht und wie wir es dann letzten Endes auch zur Laufzeit verändern können.
+
+HTML -> HTML-Parser -> DOM-Tree -> Render Tree (wichtig weil Bilder nicht mal geladen werden, wenn sie nicht gerendert werden) -> Magic -> Rendern
+
+Hierzu erst mal eine übliche, vereinfachte Render-Pipeline im Browser.
+Zunächst bekommt der Browser ein
+
+Dafür müssen wir das Document Object Model verstehen (DOM).
+
+Ein Browser macht nun folgendes:
+Er bekommt ein HTML Dokument, parst es und überführt es in einen DOM-Tree. Das sieht dann ungefähr folgendermaßen aus:
+(An die Tafel kritzel)
+
+Die sog. DOM-Nodes sind Knoten am DOM-Tree und sind die Objekte mit denen wir interagieren.
+Der Browser stellt uns diese via Javascript zur verfügung und befüllt sie mit allerlei Funktionalitäten und besonders Events, mit denen wir interagieren können.
+
+
+Für mehr: http://www.w3schools.com/css/default.asp
+

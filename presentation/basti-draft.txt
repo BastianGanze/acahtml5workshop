@@ -1,0 +1,32 @@
+HTML5 Gamedev workshop
+
+HTML (Keine Programmiersprache)
+CSS (Auch keine)
+JavaScript (Hat absolut nichts mit Java zu tun) (EcmaScript5/6/7)
+
+Static vs. Dynamic (PHP und andere Dinge)
+
+Spieleentwicklung ausschließlich mit dem Browser
+
+Browserkompatiblität
+
+Hauptfunktionen des Browsers:
+http://www.html5rocks.com/de/tutorials/internals/howbrowserswork/
+https://www.w3.org/
+https://webkit.org/
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
+
+[1] - http://www.html5rocks.com/de/tutorials/internals/howbrowserswork/layers.png
+
+Basic HTML Page.
+HTML -> HTML-Parser -> DOM-Tree -> Render Tree (wichtig weil Bilder nicht mal geladen werden, wenn sie nicht gerendert werden) -> Magic -> Rendern
+Basic CSS.
+
+Content loading im Browser
+
+Die Entwicklerkonsole/Firebug
+
+
+Gulp/Grunt
+Minimizing JS
+Typescript/Coffeescript/ES6
