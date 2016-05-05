@@ -1,0 +1,28 @@
+ul.positive {
+  list-style: none; }
+
+ul.negative {
+  list-style: none; }
+
+ul.nothing {
+  list-style: none; }
+
+.strong {
+  font-weight: bold; }
+
+.extra-strong {
+  font-weight: bold;
+  text-decoration: underline; }
+
+.left-align {
+  text-align: left; }
+  .left-align h2 {
+    maring-bottom: 15px; }
+  .left-align ul {
+    margin-bottom: 15px; }
+
+.reveal section img {
+  border: none;
+  box-shadow: none; }
+
+/*# sourceMappingURL=custom.css.map */

@@ -12,7 +12,7 @@ Pro:
 
 Kontra:
 -> Code lässt sich schwer vor dem User verstecken (obfuscation)
--> Performance (Siehe ASM.js(http://asmjs.org/) und WebAssambly(https://webassembly.github.io/))
+-> Performance (Siehe ASM.js(http://asmjs.org/) und WebAssembly(https://webassembly.github.io/))
 
 Was müssen wir wissen, um loslegen zu können?
 Browser-Architektur
