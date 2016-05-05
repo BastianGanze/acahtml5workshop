@@ -31,15 +31,25 @@ Die wichtigste Rolle spielen dabei Webseiten. Das sind in der Regel HTML-Dokumen
 Dieses HTML Dokument ist lediglich eine Beschreibung dessen, wie die Seite strukturiert sein soll. Es liegt am Browser sie so darzustellen,
 wie sie letzten Endes aussehen soll.
 
+Was die Bilder, Sounds und anderen Content angeht, lädt der Browser alle Resourcen separrat und asynchron,
+das heißt, ihr könnt nicht davon ausgehen, das Bild X vor Bild Y fertig geladen ist. Ihr könnt prinzipiell gar nicht davon ausgehen, das eine Resource bereits zu Verfügung steht.
+
+
+
 HTML - HyperText Markup Language (Markup Language, not Programming Language)
 Was ist das nun genau?
 
 HTML ist ein vom WC3 festgelegt Standard, der (großteils) von allen Browserherstellern beachtet wird.
 
 Der WC3 Standard ist jedoch keinesfall absolut und nicht alle Browserhersteller unterstützen alle Teile des Standards.
+~Browserkompatiblität~
 Damit ihr versteht, wieso ein Browser ein Feature hat was ihr eventuell benutzen wollt, ein anderer aber nicht, muss ich kurz einen Abstecher in die Geschichte machen:
 
-Gegen 2004 wurde die Web Hypertext Application Technology Working Group (WHATWG) gegründet, aus dem Frust heraus, das die WC3 sehr sehr lange benötigt um neue Webstandards festzulegen und es kaum noch Innovation in den Vorschlägen gab. Daher hat die WHATWG die HTML5 Spezifikation geschrieben und die WC3 dann später nachgegeben und diesen Adaptiert. Die WHATWG erweitert HTML5 jedoch als "Lebenden Standard" und die Browserhersteller folgen gerne den Dokumenten der WHATWG statt der WC3, daher solltet ihr immer schauen, ob euer Feature funktioniert und besonders ob es im Standard steht. (http://caniuse.com/, https://html5test.com/)
+Gegen 2004 wurde die Web Hypertext Application Technology Working Group (WHATWG) gegründet, aus dem Frust heraus,
+das die WC3 sehr sehr lange benötigt um neue Webstandards festzulegen und es kaum noch Innovation in den Vorschlägen gab.
+Daher hat die WHATWG die HTML5 Spezifikation geschrieben und die WC3 dann später nachgegeben und diesen Adaptiert.
+Die WHATWG erweitert HTML5 jedoch als "Lebenden Standard" und die Browserhersteller folgen gerne den Dokumenten der WHATWG statt der WC3,
+daher solltet ihr immer schauen, ob euer Feature funktioniert und besonders ob es im Standard steht. (http://caniuse.com/, https://html5test.com/)
 
 
 Hier nun also erst mal der Grundlegende Aufbau eines HTML-Dokuments:
@@ -68,11 +78,13 @@ http://www.w3schools.com/html/html5_intro.asp an.
 
 Im Prinzip kann ich mir nun also eine leere Textdatei erstellen, diese auf .html umbenennen, das markdown reinpasten und die seite lokal in meinem browser ausführen.
 
-Nun wissen wir, wie wir Markdown erstellen. Wenn wir nun aber ein Spiel schreiben wollen würden, hätten wir eventuell gerne einen schwarzen Hintergrund. Dafür benötigen wir CSS, da HTML wirklich nur die Struktur des Dokuments festlegt.
+Nun wissen wir, wie wir Markdown erstellen. Wenn wir nun aber ein Spiel schreiben wollen würden, hätten wir eventuell gerne einen schwarzen Hintergrund.
+Dafür benötigen wir CSS, da HTML wirklich nur die Struktur des Dokuments festlegt.
 
 CSS (Caskading Stylesheets)
 Mit CSS beschreiben wir, welche Elemente wie aussehen sollen, wo sie positioniert sein sollen, welche Farbe sie haben sollen etc.
-Dafür gibt es in CSS die sogenannten "selektoren", mit denen wir ein oder mehrere Elemente auswählen können. Selektoren werden gefolgt von einem Deklarationsblock, in dem wir alle Eigenschaften festlegen, die auf alle Elemente angewendet werden, welche mit deisem Selektor ausgewählt werden.
+Dafür gibt es in CSS die sogenannten "selektoren", mit denen wir ein oder mehrere Elemente auswählen können.
+Selektoren werden gefolgt von einem Deklarationsblock, in dem wir alle Eigenschaften festlegen, die auf alle Elemente angewendet werden, welche mit deisem Selektor ausgewählt werden.
 
 body{
 	background-color: #000000;
@@ -81,23 +93,37 @@ body{
 	background-color: black;
 }
 
+Das reicht uns auch schon, wenn ihr mehr wollt, schaut euch das Tutorial hier an:
+http://www.w3schools.com/css/default.asp
 
-Da wir später in Javascript mit den Elementen des HTML-Dokuments arbeiten, müssen wir noch einen kleinen Abstecher nehmen um zu verstehen, was der Browser genau mit unserem Markdown macht und wie wir es dann letzten Endes auch zur Laufzeit verändern können.
+
+Da wir später in Javascript mit den Elementen des HTML-Dokuments arbeiten, müssen wir noch einen kleinen Abstecher nehmen um zu verstehen, was der Browser genau mit unserem Markdown macht
+und wie wir es dann letzten Endes auch zur Laufzeit verändern können.
 
 HTML -> HTML-Parser -> DOM-Tree -> Render Tree (wichtig weil Bilder nicht mal geladen werden, wenn sie nicht gerendert werden) -> Magic -> Rendern
 
 Hierzu erst mal eine übliche, vereinfachte Render-Pipeline im Browser.
-Zunächst bekommt der Browser ein
+Zunächst bekommt der Browser das Dokument, welches er parst, also in eine für ihn verständliche Struktur überführt.
+Diese Struktur ist der DOM-Tree.
+Hier nun eine kleine Skizze eines "üblichen" Domtrees.
 
-Dafür müssen wir das Document Object Model verstehen (DOM).
+Der Browser baut also einen Baum auf, bei dem die Kinder eines DOM-Nodes jeweils Elemente in diesem Node sind.
+Der Browser schreibt nun an diese Nodes verschiedene Attribute und Funktionen, die wir benutzen können, um mit diesen Funktionen zu interagieren.
 
-Ein Browser macht nun folgendes:
-Er bekommt ein HTML Dokument, parst es und überführt es in einen DOM-Tree. Das sieht dann ungefähr folgendermaßen aus:
-(An die Tafel kritzel)
+Wenn wir zum Beispiel wissen wollen, ob eine Taste gedrückt wurde, nehmen wir uns das Dokument und überschreiben dessen keypress attribut mit einer funktion,
+welche dann ausgeführt wird, wenn eine Taste gedrückt wird. Wir können aber auch die Funktion addEventListener('keypress', function()) aufrufen und so einen callback festlegen.
+Hier greife ich nun etwas vor, aber in Javascript wird sehr viel mit Callbacks gearbeitet.
+Ein Callback ist eine alleinstehende Funktion die wir wie eine variable als parameter in funktionen geben können.
+Die Funktion führt dann unseren callback aus, oft zu einem späteren Zeitpunkt.
 
-Die sog. DOM-Nodes sind Knoten am DOM-Tree und sind die Objekte mit denen wir interagieren.
-Der Browser stellt uns diese via Javascript zur verfügung und befüllt sie mit allerlei Funktionalitäten und besonders Events, mit denen wir interagieren können.
+
+Nun da wir den Großteil aus dem Weg haben, lasst uns mal das Wichtigste Tool ansehen, wenn wir mit dem Browser entwickeln wollen:
+Die Entwickler-Konsole.
+Ich empfehle Chrome als Haupt-Browser bei der Entwicklung zu verwenden, da es die ausgeprägtesten Tools bereits mitbringt.
+Wenn ihr unbedingt Firefox verwenden wollt, schaut euch noch das Tool Firebug an.  (https://addons.mozilla.org/de/firefox/addon/firebug/)
 
 
-Für mehr: http://www.w3schools.com/css/default.asp
+-> Entwicklerkonsole erklären. IMG einbinden und zeigen das es im Netwerk auftaucht und geladen wird.
+
+
 
