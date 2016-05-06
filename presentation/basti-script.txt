@@ -23,7 +23,6 @@ JavaScript
 Zunächst versuchen wir den Browser zu verstehen, dann machen wir einen CrashCourse in HTML, erwähnen CSS noch am Rande und beginnen
 dann mit dem Hauptthema des Abends: Javascript
 
-
 Gehen wir nun also direkt auf den Browser ein.
 Die Aufgabe des Browsers ist es, Daten aus dem Internet (oder anderen Quellen), zu holen und anzuzeigen.
 Die wichtigste Rolle spielen dabei Webseiten. Das sind in der Regel HTML-Dokumente, welche über HTTP oder HTTPS von einem Server angefragt werden.
@@ -40,16 +39,19 @@ HTML - HyperText Markup Language (Markup Language, not Programming Language)
 Was ist das nun genau?
 
 HTML ist ein vom WC3 festgelegt Standard, der (großteils) von allen Browserherstellern beachtet wird.
+Der Standard beschreibt den allgemeinen Aufbau eines HTML-Dokuments sowie Funktionalitäten und APIs die Browser,
+welche HTML5 unterstützen wollen, mit sich bringen müssen.
 
 Der WC3 Standard ist jedoch keinesfall absolut und nicht alle Browserhersteller unterstützen alle Teile des Standards.
 ~Browserkompatiblität~
 Damit ihr versteht, wieso ein Browser ein Feature hat was ihr eventuell benutzen wollt, ein anderer aber nicht, muss ich kurz einen Abstecher in die Geschichte machen:
 
-Gegen 2004 wurde die Web Hypertext Application Technology Working Group (WHATWG) gegründet, aus dem Frust heraus,
+---Gegen 2004 wurde die Web Hypertext Application Technology Working Group (WHATWG) gegründet, aus dem Frust heraus,
 das die WC3 sehr sehr lange benötigt um neue Webstandards festzulegen und es kaum noch Innovation in den Vorschlägen gab.
 Daher hat die WHATWG die HTML5 Spezifikation geschrieben und die WC3 dann später nachgegeben und diesen Adaptiert.
 Die WHATWG erweitert HTML5 jedoch als "Lebenden Standard" und die Browserhersteller folgen gerne den Dokumenten der WHATWG statt der WC3,
-daher solltet ihr immer schauen, ob euer Feature funktioniert und besonders ob es im Standard steht. (http://caniuse.com/, https://html5test.com/)
+daher solltet ihr immer schauen, ob euer Feature funktioniert und besonders ob es im Standard steht. (http://caniuse.com/, https://html5test.com/)---
+
 
 
 Hier nun also erst mal der Grundlegende Aufbau eines HTML-Dokuments:
@@ -124,6 +126,8 @@ Wenn ihr unbedingt Firefox verwenden wollt, schaut euch noch das Tool Firebug an
 
 
 -> Entwicklerkonsole erklären. IMG einbinden und zeigen das es im Netwerk auftaucht und geladen wird.
+
+
 
 
 

@@ -21,6 +21,9 @@ ul.nothing{
 
 .left-align{
     text-align: left;
+    pre{
+        margin-left: 0;
+    }
     h2{
         maring-bottom: 15px;
     }
@@ -29,7 +32,25 @@ ul.nothing{
     }
 }
 
+.reveal a:hover{
+    img{
+        box-shadow: none;
+    }
+}
+
+.reveal section .center-everything{
+    display: flex;
+    align-items: center;
+}
+
+.reveal section .no-image-margin{
+    img{margin: 0;}
+}
+
 .reveal section img{
     border: none;
     box-shadow: none;
+    background: none;
+    background-color: transparent;
 }
+

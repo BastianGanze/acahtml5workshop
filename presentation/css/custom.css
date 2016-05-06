@@ -16,13 +16,27 @@ ul.nothing {
 
 .left-align {
   text-align: left; }
+  .left-align pre {
+    margin-left: 0; }
   .left-align h2 {
     maring-bottom: 15px; }
   .left-align ul {
     margin-bottom: 15px; }
 
+.reveal a:hover img {
+  box-shadow: none; }
+
+.reveal section .center-everything {
+  display: flex;
+  align-items: center; }
+
+.reveal section .no-image-margin img {
+  margin: 0; }
+
 .reveal section img {
   border: none;
-  box-shadow: none; }
+  box-shadow: none;
+  background: none;
+  background-color: transparent; }
 
 /*# sourceMappingURL=custom.css.map */
