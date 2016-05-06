@@ -20,6 +20,14 @@ function Game()
     this.update = function(delta)
     {
         player.update(delta);
+        
+        if (coins.length > 0) {
+            for (var i = 0; i < coins.length; i++) {
+                if (Utils.Overlapping(player, coins[i])) {
+                    console.log("player overlapping coin" + coins[i].position.x + " " + coins[i].position.y);
+                }
+            }
+        }
     }
 
     this.render = function(delta)

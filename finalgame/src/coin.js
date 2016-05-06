@@ -1,17 +1,21 @@
 function Coin(X, Y) {
 
     var sprite;
-    var pos;
-    var width;
-    var height;
+    var position;
+    var spriteWidth;
+    var spriteHeight;
 
     function init() {
-        pos = { x:X, y:Y };
+        position = { x:X, y:Y };
         sprite = new PIXI.Sprite.fromImage("assets/sprites/coin.png");
-        sprite.position.x = pos.x;
-        sprite.position.y = pos.y;
-        width = 16;
-        height = 16;
+        sprite.position.x = position.x;
+        sprite.position.y = position.y;
+        spriteWidth = 16;
+        spriteHeight = 16;
+
+        this.position = position;
+        this.spriteWidth = spriteWidth;
+        this.spriteHeight = spriteHeight;
 
         MainContainer().addChild(sprite);
     }
