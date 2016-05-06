@@ -1,6 +1,6 @@
 function Player(startX,startY)
 {
-    var self = this, sprite, position,
+    var sprite, position,
         spriteWidth, spriteHeight,
         speed = 50;
 

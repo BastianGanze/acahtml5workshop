@@ -19,6 +19,6 @@ function Game()
         renderer.render(mainContainer);
     }
 
-    init();
+    init.call(this);
 }
 
