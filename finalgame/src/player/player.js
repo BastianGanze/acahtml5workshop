@@ -1,6 +1,6 @@
 function Player(startX,startY)
 {
-    var self = this, sprite, position,
+    var sprite, position,
         spriteWidth, spriteHeight,
         speed = 50;
 
@@ -15,6 +15,10 @@ function Player(startX,startY)
 
         sprite.texture.frame = new PIXI.Rectangle(0,0,0,0);
         this.setFrame(0,0);
+        
+        this.position = position;
+        this.spriteWidth = spriteWidth;
+        this.spriteHeight = spriteHeight;
 
         MainContainer().addChild(sprite);
     }
