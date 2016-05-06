@@ -70,7 +70,7 @@ var baz; // undefined
 
 // all usual operations
 // += *= /= %= ++ --
-                       </code></pre>
+                        </code></pre>
                     </section>
                     <section>
                         <h2>Arrays</h2>
@@ -81,7 +81,7 @@ someArray[0]; // "foo"
 
 someArray.push("bar"); // ["foo, 42, false, "bar"]
 someArray.length; // 4
-                      </code></pre>
+                        </code></pre>
                     </section>
                     <section>
                         <h2>Objects</h2>
@@ -98,12 +98,12 @@ someObj.k1; // "foo"
                         <pre><code class="hljs" data-trim contenteditable>
 // all the usual
 for (var i = 0; i < 10; i++) {
-    console.log(i); // 1 .. 2 .. 3 ..
-}
+                                   console.log(i); // 1 .. 2 .. 3 ..
+                                   }
 
-for (var x in [1,2,3]) {
-    console.log(x); // 1 .. 2 .. 3
-}
+                                   for (var x in [1,2,3]) {
+                                   console.log(x); // 1 .. 2 .. 3
+                                   }
                         </code></pre>
                     </section>
                     <section>
@@ -154,11 +154,11 @@ document.addEventListener("$event$", function (evt) {
                 </section>
                 <section id="fragments">
                     <h2>Libs</h2>
-                    <p><a href="">pixi.js</a> - 2D graphics rendering engine</p>
-                    <p class="fragment"><a href="https://github.com/CreateJS/PreloadJS/blob/master/lib/preloadjs-0.6.2.min.js">preload.js</a></p>
-                    <p class="fragment"><a href="https://github.com/CreateJS/SoundJS/blob/master/lib/soundjs-0.6.2.min.js">sound.js</a></p>
+                    <p class="fragment"><a href="https://github.com/pixijs/pixi.js">pixi.js</a> - 2D rendering engine that uses webGL</p>
+                    <p class="fragment"><a href="https://github.com/CreateJS/PreloadJS">preload.js</a> - easier loading of files</p>
+                    <p class="fragment"><a href="https://github.com/CreateJS/SoundJS">sound.js</a> - easier audio playback</p>
                 </section>
-            </div>
+                </div>
         </div>
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
