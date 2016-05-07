@@ -16,8 +16,10 @@ function Player(startX,startY)
         position = {x:startX, y:startY};
 
         var img = AssetLoader.getContent("Guy");
-        var bTex = new PIXI.BaseTexture(img);
-        sprite = new PIXI.Sprite.fromImage('assets/sprites/guy.png');
+        var baseTex = new PIXI.BaseTexture(img);
+        var texture = new PIXI.Texture(baseTex);
+        sprite = new PIXI.Sprite(texture);
+
         sprite.position.x = position.x;
         sprite.position.y = position.y;
         spriteWidth  = 32;

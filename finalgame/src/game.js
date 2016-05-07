@@ -32,6 +32,10 @@ function Game()
         this.checkCollision();
         scoreText.text = score + "";
         this.replaceCoins();
+        for(var c in coins)
+        {
+            coins[c].update(delta);
+        }
     }
 
     this.checkCollision = function() {
