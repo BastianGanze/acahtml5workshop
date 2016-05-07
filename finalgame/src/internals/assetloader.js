@@ -1,6 +1,6 @@
 var AssetLoader = function()
 {
-    var assets = [{src: "assets/sprites/guy.png", id:"Guy"}, {src:"assets/sprites/coins.png", id:"Coins"}, {src:"assets/audio/mariocoin.wav", id:"CoinSound"}],
+    var assets = [{src: "assets/sprites/guy.png", id:"Guy"}, {src:"assets/sprites/coins.png", id:"Coins"}, {src:"assets/audio/mariocoin.wav", id:"CoinSound"}, {src:"assets/sprites/bg.png", id:"Bg"}],
         assetQueue = new createjs.LoadQueue(true),
         loadedCallback;
 

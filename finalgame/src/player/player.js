@@ -15,6 +15,8 @@ function Player(startX,startY)
     {
         position = {x:startX, y:startY};
 
+        var img = AssetLoader.getContent("Guy");
+        var bTex = new PIXI.BaseTexture(img);
         sprite = new PIXI.Sprite.fromImage('assets/sprites/guy.png');
         sprite.position.x = position.x;
         sprite.position.y = position.y;
