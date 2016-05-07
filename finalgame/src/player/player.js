@@ -42,23 +42,17 @@ function Player(startX,startY)
         position.y += Input.yAxis() * speed/delta;
         // LEFT
         if (Input.xAxis() < 0) {
-            console.log("left");
             walkDir = Direction.LEFT;
         // RIGHT
         } else if (Input.xAxis() > 0) {
-            console.log("right");
               walkDir = Direction.RIGHT;
         // TOP
         } else if (Input.yAxis() < 0) {
-            console.log("top");
               walkDir = Direction.TOP;
         // BOT
         } else if (Input.yAxis() > 0) {
-              console.log("bot");
               walkDir = Direction.BOT;
         }
-
-        console.log(walkDir);
 
         switch(walkDir) {
             case Direction.BOT:
