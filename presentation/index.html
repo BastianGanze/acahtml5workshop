@@ -168,16 +168,15 @@
                     <section>
                         <h2>... Strings (and Booleans) ... </h2>
                         <pre><code class="hljs" data-trim contenteditable>
-'Aca' + "gamics";
-// Strings can be treated as arrays
-"AcaGamics"[0]; \\ "A"
+"Aca" + "gamics"; // Strings can be treated as arrays
+"AcaGamics"[0]; // "A"
 
 // Booleans are Booleans
 // true false
 
 // null and undefined
-null; // there is no value here
-undefined; // there is no value currently set
+null; // value has been set to null, doesn't happen automatically
+undefined; // value not set
                         </code></pre>
                         <a href="../editor" target="_blank">editor</a>
                     </section>
@@ -225,7 +224,7 @@ someArray.length; // 4
                         <h2>Objects</h2>
                         <pre><code class="hljs" data-trim contenteditable>
 var someObj = {k1: "foo", "key 2": "bar"}; 
-// the same as "dictionaries" or "maps"
+// the same as dictionaries, maps
 
 someObj["key 2"]; // "bar"
 someObj.k1; // "foo"
@@ -237,11 +236,11 @@ someObj.k1; // "foo"
                         <pre><code class="hljs" data-trim contenteditable>
 // all the usual
 for (var i = 0; i < 10; i++) {
-console.log(i); // 1 .. 2 .. 3 ..
+    console.log(i); // 1 .. 2 .. 3 ..
 }
 
 for (var x in [1,2,3]) {
-console.log(x); // 1 .. 2 .. 3
+    console.log(x); // 1 .. 2 .. 3
 }
                         </code></pre>
                         <a href="../editor" target="_blank">editor</a>
@@ -266,7 +265,7 @@ i; // ReferenceError
                         <pre><code class="hljs" data-trim contenteditable>
 myObj = {
     myString: "Hello world!",
-    myFunc: function(){
+    myFunc: function() {
         return this.myString;
     }
 };
@@ -299,13 +298,28 @@ document.addEventListener("$event$", function (evt) {
                         </code></pre>
                         <a href="../editor" target="_blank">editor</a>
                     </section>
-
                 </section>
-                <section id="fragments">
+                <section>
                     <h2>Libs</h2>
                     <p class="fragment"><a href="https://github.com/pixijs/pixi.js">pixi.js</a> - 2D rendering engine that uses webGL</p>
                     <p class="fragment"><a href="https://github.com/CreateJS/PreloadJS">preload.js</a> - easier loading of files</p>
                     <p class="fragment"><a href="https://github.com/CreateJS/SoundJS">sound.js</a> - easier audio playback</p>
+                </section>
+                <section>
+                    <h2>Transpiling und Tools</h2>
+                    <ul>
+                        <li>Typescript</li>
+                        <li>CoffeeScript</li>
+                        <li>ES6 / ES7</li>
+                    </ul>
+                    <ul>
+                        <li>npm.js</li>
+                        <li>browserify</li>
+                        <li>gulp / grunt</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1><a href="../finalgame">The Game</a></h1>
                 </section>
                 </div>
         </div>
