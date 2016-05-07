@@ -24,7 +24,7 @@ function Player(startX,startY)
         this.position = position;
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
-        spriteFrame = new PIXI.Rectangle(0,0,0,0);
+        spriteFrame = new PIXI.Rectangle(0,0,spriteWidth,spriteHeight);
         this.setFrame(0,0);
         MainContainer().addChild(sprite);
     }
