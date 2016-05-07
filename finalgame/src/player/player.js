@@ -21,12 +21,10 @@ function Player(startX,startY)
         spriteWidth  = 32;
         spriteHeight = 48;
 
-        sprite.texture.frame = new PIXI.Rectangle(0,0,0,0);
-        
         this.position = position;
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
-
+        this.setFrame(0,0);
         MainContainer().addChild(sprite);
     }
 
