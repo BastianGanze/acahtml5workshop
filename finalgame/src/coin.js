@@ -7,7 +7,11 @@ function Coin(X, Y) {
 
     function init() {
         position = { x:X, y:Y };
-        sprite = new PIXI.Sprite.fromImage("assets/sprites/coin.png");
+        var img = AssetLoader.getContent("Coins");
+        baseTex = new PIXI.BaseTexture(img);
+        texture = new PIXI.Texture(baseTex);
+        sprite = new PIXI.Sprite(texture);
+
         sprite.position.x = position.x;
         sprite.position.y = position.y;
         spriteWidth = 16;
