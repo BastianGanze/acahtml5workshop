@@ -1,7 +1,7 @@
 function Player(startX,startY)
 {
     var sprite, position,
-        spriteWidth, spriteHeight,
+        spriteWidth, spriteHeight, spriteFrame,
         speed = 50;
     var Direction = {
         TOP: 0,
@@ -24,13 +24,18 @@ function Player(startX,startY)
         this.position = position;
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
+        spriteFrame = new PIXI.Rectangle(0,0,0,0);
         this.setFrame(0,0);
         MainContainer().addChild(sprite);
     }
 
     this.setFrame = function(x,y)
     {
-        sprite.texture.frame = new PIXI.Rectangle(x*spriteWidth,y*spriteHeight,spriteWidth,spriteHeight);
+        spriteFrame.x = x*spriteWidth;
+        spriteFrame.y = y*spriteHeight;
+        spriteFrame.width = spriteWidth;
+        spriteFrame.height = spriteHeight;
+        sprite.texture.frame = spriteFrame; //Set frame anew to trigger openGL update of texture.
     }
 
     this.update = function(delta)
