@@ -32,10 +32,7 @@ function Player(startX,startY)
 
     this.setFrame = function(x,y)
     {
-        sprite.texture.frame.x = x*spriteWidth;
-        sprite.texture.frame.y = y*spriteHeight;
-        sprite.texture.frame.width = spriteWidth;
-        sprite.texture.frame.height = spriteHeight;
+        sprite.texture.frame = new PIXI.Rectangle(x*spriteWidth,y*spriteHeight,spriteWidth,spriteHeight);
     }
 
     this.update = function(delta)
