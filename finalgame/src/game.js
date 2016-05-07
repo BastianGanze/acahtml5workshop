@@ -9,15 +9,20 @@ function Game()
     {
         renderer = GameRenderer();
         mainContainer = MainContainer();
+
+        var bgImg = AssetLoader.getContent("Bg");
+        var bgBaseTex = new PIXI.BaseTexture(bgImg);
+        var bgTexture = new PIXI.Texture(bgBaseTex);
+        var bgSprite = new PIXI.Sprite(bgTexture);
+        MainContainer().addChild(bgSprite);
+
         this.placeCoins(10);
         player = new Player(50,50);
 
         scoreText = new PIXI.Text("0", {fill: "#000000", font: "20px Arial"});
+        scoreText.position.y = 10;
         scoreText.position.x = 10;
         MainContainer().addChild(scoreText);
-        
-        var bgImage = AssetLoader.getContent("Bg");
-        
     }
 
     this.placeCoins = function(amount) {
@@ -44,6 +49,7 @@ function Game()
                 score += 10;
                 coins[i].destroy();
                 coins.splice(i, 1);
+                createjs.Sound.play("CoinSound");
             }
         }
     }
