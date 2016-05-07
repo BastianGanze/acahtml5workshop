@@ -23,6 +23,10 @@ function Coin(X, Y) {
     this.update = function(delta) {
         //TODO: add rotation
     }
+
+    this.destroy = function() {
+        MainContainer().removeChild(sprite);
+    }
     
     init.call(this);
 
