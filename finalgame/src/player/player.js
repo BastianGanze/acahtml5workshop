@@ -2,7 +2,10 @@ function Player(startX,startY)
 {
     var sprite, position,
         spriteWidth, spriteHeight, spriteFrame,
-        speed = 50;
+        speed = 50, frameX = 0, frameY = 0,
+        timer = 0,
+        aniTime = 100,
+        currentFrame = 0;
     var Direction = {
         TOP: 0,
         BOT: 1,
@@ -31,9 +34,34 @@ function Player(startX,startY)
 
     this.setFrame = function(x,y)
     {
+        frameX = x; frameY = y;
         spriteFrame.x = x*spriteWidth;
         spriteFrame.y = y*spriteHeight;
         sprite.texture.frame = spriteFrame; //Set frame anew to trigger openGL update of texture.
+    }
+
+    this.doAnimation = function(delta)
+    {
+        if(Input.xAxis() != 0 || Input.yAxis() != 0)
+        {
+            timer+=delta;
+            if(timer >= aniTime)
+            {
+                timer = 0;
+
+                    currentFrame++;
+                    if(currentFrame == 3)
+                    {
+                        currentFrame = 0;
+                    }
+                    this.setFrame(currentFrame, frameY);
+
+            }
+        }
+        else
+        {
+            this.setFrame(0, frameY);
+        }
     }
 
     this.update = function(delta)
@@ -56,18 +84,20 @@ function Player(startX,startY)
 
         switch(walkDir) {
             case Direction.BOT:
-                  this.setFrame(0, 0);
+                  frameY = 0;
                   break;
             case Direction.TOP:
-                  this.setFrame(0, 3);
+                  frameY = 3;
                   break;
             case Direction.LEFT:
-                  this.setFrame(0, 1);
+                  frameY = 1;
                   break;
             case Direction.RIGHT:
-                  this.setFrame(0, 2);
+                  frameY = 2;
                   break;
         }
+
+        this.doAnimation(delta);
 
         sprite.position.x = position.x;
         sprite.position.y = position.y;
