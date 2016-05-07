@@ -15,6 +15,9 @@ function Game()
         scoreText = new PIXI.Text("0", {fill: "#000000", font: "20px Arial"});
         scoreText.position.x = 10;
         MainContainer().addChild(scoreText);
+        
+        var bgImage = AssetLoader.getContent("Bg");
+        
     }
 
     this.placeCoins = function(amount) {
