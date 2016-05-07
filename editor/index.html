@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70%;
+    }
+
+    #out {
+        position: absolute;
+        top: 70%;
+        border: black solid 1px;
+        margin: 0;
+        padding: 5px;
+        padding-left: 50px;
+        padding-top: 10px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 30px;ont
+    }
+  </style>
+</head>
+<body>
+    <pre id="editor"></pre>
+    <pre id="out"></pre>
+    <script src="src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    var editorElem = document.getElementById("editor");
+    var slideOpen = location.hash;
+
+    switch (slideOpen) {
+        case "#1":
+            editorElem.innerHTML = "3;\n1.5;";
+            break;
+    }
+
+    var out = document.getElementById("out");
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/github");
+    editor.session.setMode("ace/mode/javascript");
+    document.getElementById('editor').style.fontSize='20px';
+    
+    editor.commands.addCommand({
+    name: 'run_code',
+    bindKey: {win: 'Ctrl-B',  mac: 'Command-B'},
+    exec: function(editor) {
+        try {
+            var r = window.eval(editor.getCopyText() || editor.getValue());
+        } catch(e) {
+            r = e;
+        }
+        out.innerHTML = r + "";
+        console.log(r + ""); 
+    }
+});
+</script>
+
+</body>
+</html>
