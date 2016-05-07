@@ -33,8 +33,6 @@ function Player(startX,startY)
     {
         spriteFrame.x = x*spriteWidth;
         spriteFrame.y = y*spriteHeight;
-        spriteFrame.width = spriteWidth;
-        spriteFrame.height = spriteHeight;
         sprite.texture.frame = spriteFrame; //Set frame anew to trigger openGL update of texture.
     }
 
