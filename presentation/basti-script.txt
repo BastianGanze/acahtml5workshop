@@ -99,7 +99,8 @@ Das reicht uns auch schon, wenn ihr mehr wollt, schaut euch das Tutorial hier an
 http://www.w3schools.com/css/default.asp
 
 
-Da wir später in Javascript mit den Elementen des HTML-Dokuments arbeiten, müssen wir noch einen kleinen Abstecher nehmen um zu verstehen, was der Browser genau mit unserem Markdown macht
+Da wir später in Javascript mit den Elementen des HTML-Dokuments arbeiten, müssen wir noch einen kleinen Abstecher nehmen um zu verstehen,
+was der Browser genau mit unserem Markdown macht.
 und wie wir es dann letzten Endes auch zur Laufzeit verändern können.
 
 HTML -> HTML-Parser -> DOM-Tree -> Render Tree (wichtig weil Bilder nicht mal geladen werden, wenn sie nicht gerendert werden) -> Magic -> Rendern
