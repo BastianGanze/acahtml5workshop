@@ -4,7 +4,7 @@ This repo contains all slides and code for the Acagamics HTML5 Workshop.
 
 ## Requirements
 
-* a webserver (e.g. [lighttpd](http://www.lighttpd.net/))
+* a webserver (e.g. [lighttpd](http://lighttpd.dtech.hu/))
 * an editor (e.g. [Atom](https://atom.io/))
 * a Web browser (e.g. [Goolg Chrome](https://www.google.com/intl/de/chrome/browser/))
 
