@@ -14,9 +14,19 @@ This repo contains all slides and code for the Acagamics HTML5 Workshop.
 * the final version of the example game is in: ```finalgame/```
 * the game skeleton is in: ```newgame/```
 
-## Usage
+## Usage (short)
 
 * start a webserver in the project root
 * start writing the game
 * ????
 * profit!
+* 
+
+## Usage (long)
+
+* install [git](https://git-scm.com/)
+* install [lighttpd](http://www.lighttpd.net/)
+* clone this repo
+* copy the resulting folder in the lighttpd base directory
+* go to http://localhost/presentation for the presentation slides
+* go to http://localhost/newgame to show the game you'll work on
