@@ -20,7 +20,6 @@ This repo contains all slides and code for the Acagamics HTML5 Workshop.
 * start writing the game
 * ????
 * profit!
-* 
 
 ## Usage (long)
 
