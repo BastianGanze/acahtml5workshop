@@ -224,10 +224,14 @@ someArray.length; // 4
                         <h2>Objects</h2>
                         <pre><code class="hljs" data-trim contenteditable>
 var someObj = {k1: "foo", "key 2": "bar"}; 
-// the same as dictionaries, maps
+// associative arrays, with a prototype
 
 someObj["key 2"]; // "bar"
 someObj.k1; // "foo"
+
+// objects have a prototype
+Array.prototype.foo = function (a) { return a; };
+[].foo(1); // 1
                         </code></pre>
                         <a href="../editor" target="_blank">editor</a>
                     </section>
@@ -270,6 +274,7 @@ myObj = {
     }
 };
 
+// every function is also an Object
 // constructor function the equivalent of a class
 function TestClass() {
     this.foo = function (a) {
@@ -277,7 +282,7 @@ function TestClass() {
     }    
 }
 // instantiate
-var test = new TestClass();
+var test = new TestClass(); // creates an instance of the prototype
 test.foo(2); // 4
                         </code></pre>
                         <a href="../editor" target="_blank">editor</a>
