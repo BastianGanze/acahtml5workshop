@@ -27,6 +27,6 @@ This repo contains all slides and code for the Acagamics HTML5 Workshop.
 * install [git](https://git-scm.com/)
 * install [lighttpd](http://www.lighttpd.net/)
 * clone this repo
-* copy the resulting folder in the lighttpd base directory
+* copy the resulting folder in the lighttpd base (htdocs) directory
 * go to [http://localhost/presentation](http://localhost/presentation) for the presentation slides
 * go to [http://localhost/newgame](http://localhost/newgame) to show the game you'll work on
