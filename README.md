@@ -1,4 +1,4 @@
-# Acgamics HTML5 Workshop
+# Acagamics HTML5 Workshop
 
 This repo contains all slides and code for the Acagamics HTML5 Workshop.
 
