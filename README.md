@@ -11,7 +11,7 @@ This repo contains all slides and code for the Acagamics HTML5 Workshop.
 
 ## Structure
 
-* presentation slides are in: ```presentation/```
+* presentation slides are in: ```presentation/``` (Just open index.html in your Browser)
 * the final version of the example game is in: ```finalgame/```
 * the game skeleton is in: ```newgame/```
 
